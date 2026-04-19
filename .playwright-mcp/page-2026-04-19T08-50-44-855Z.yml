@@ -1,0 +1,36 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - heading "React Component Generator" [level=1] [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e68]:
+          - generic [ref=e71]: Create a SaaS analytics dashboard with stat cards showing revenue, users, conversion rate, and churn. Include a recent activity feed and a top channels breakdown. Dark theme.
+          - img [ref=e74]
+        - generic [ref=e23]:
+          - textbox "Describe the React component you want to create..." [ref=e24]
+          - button [disabled] [ref=e25]:
+            - img [ref=e26]
+    - separator [ref=e29]
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - tablist [ref=e34]:
+          - tab "Preview" [selected] [ref=e35]
+          - tab "Code" [ref=e36]
+        - generic [ref=e37]:
+          - button "Sign In" [ref=e38]
+          - button "Sign Up" [ref=e39]
+      - generic [ref=e43]:
+        - img [ref=e45]
+        - heading "Welcome to UI Generator" [level=3] [ref=e47]
+        - paragraph [ref=e48]: Start building React components with AI assistance
+        - paragraph [ref=e49]: Ask the AI to create your first component to see it live here
+  - generic [ref=e56] [cursor=pointer]:
+    - button "Open issues overlay" [ref=e57]:
+      - img [ref=e59]
+      - generic [ref=e61]:
+        - generic [ref=e62]: "0"
+        - generic [ref=e63]: "1"
+      - generic [ref=e64]: Issue
+    - button "Collapse issues badge" [ref=e65]:
+      - img [ref=e66]
+  - alert [ref=e50]
