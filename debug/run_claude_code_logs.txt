@@ -1,0 +1,85 @@
+Run anthropics/claude-code-action@beta
+Run oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76
+Downloading a new version of Bun: https://bun.sh/download/1.2.11/linux/x64?avx2=true&profile=false
+/usr/bin/unzip -o -q /home/runner/work/_temp/ac9108d0-9fc0-404f-ba5c-907d1ad0e75e.zip
+/home/runner/.bun/bin/bun --revision
+1.2.11+cb6abd211
+Run cd ${GITHUB_ACTION_PATH}
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "server_tool_use": {
+        "web_search_requests": 0
+      },
+      "service_tier": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "API Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.4.content.0.tool_result.content.0.image.source.base64: The image was specified using the image/png media type, but the image appears to be a image/gif image\"},\"request_id\":\"req_011CaCxueLyjvScZZLodEfnZ\"}"
+      }
+    ]
+  },
+  "parent_tool_use_id": null,
+  "session_id": "2b2a1520-4080-4f42-bebc-8790f5fd6932",
+  "uuid": "46e46dee-7510-41f6-a463-9e6872d5045c"
+}
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": true,
+  "duration_ms": 14036,
+  "duration_api_ms": 13158,
+  "num_turns": 7,
+  "result": "API Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.4.content.0.tool_result.content.0.image.source.base64: The image was specified using the image/png media type, but the image appears to be a image/gif image\"},\"request_id\":\"req_011CaCxueLyjvScZZLodEfnZ\"}",
+  "session_id": "2b2a1520-4080-4f42-bebc-8790f5fd6932",
+  "total_cost_usd": 0.1052298,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 622,
+    "cache_read_input_tokens": 23106,
+    "output_tokens": 83,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  },
+  "permission_denials": [],
+  "uuid": "3f7543df-34cb-4fa3-9ebb-30a0511a8f06"
+}
+Error: Process completed with exit code 1.
+Run bun run ${GITHUB_ACTION_PATH}/src/entrypoints/update-comment-link.ts
+Fetching issue comment 4275701052
+Successfully fetched as issue comment
+GET /repos/sriyan983/claude_code_practice_project/branches/claude%2Fissue-6-20260419-1022 - 404 with id E019:134B6B:18896F0:64802C5:69E4ACF9 in 88ms
+Branch claude/issue-6-20260419-1022 does not exist remotely
+Branch claude/issue-6-20260419-1022 does not exist remotely, no branch link will be added
+GET /repos/sriyan983/claude_code_practice_project/compare/main...claude%2Fissue-6-20260419-1022 - 404 with id E019:134B6B:1889759:648045B:69E4ACF9 in 110ms
+Error checking for changes in branch: 11 |   /**
+12 |    * Response object if a response was received
+13 |    */
+14 |   response;
+15 |   constructor(message, statusCode, options) {
+16 |     super(message);
+         ^
+HttpError: Not Found - https://docs.github.com/rest/commits/commits#compare-two-commits
+   status: 404,
+  request: {
+  method: "GET",
+  url: "https://api.github.com/repos/sriyan983/claude_code_practice_project/compare/main...claude%2Fissue-6-20260419-1022",
+  headers: [Object ...],
+  request: [Object ...],
+},
+ response: {
+  url: "https://api.github.com/repos/sriyan983/claude_code_practice_project/compare/main...claude%2Fissue-6-20260419-1022",
+  status: 404,
+  headers: [Object ...],
+  data: [Object ...],
+},
+
+      at new RequestError (/home/runner/work/_actions/anthropics/claude-code-action/beta/node_modules/@octokit/rest/node_modules/@octokit/core/node_modules/@octokit/request-error/dist-src/index.js:16:5)
+      at fetchWrapper (/home/runner/work/_actions/anthropics/claude-code-action/beta/node_modules/@octokit/rest/node_modules/@octokit/core/node_modules/@octokit/request/dist-bundle/index.js:122:11)
+
+✅ Updated issue comment 4275701052 with job link
