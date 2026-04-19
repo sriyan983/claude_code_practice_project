@@ -33,9 +33,16 @@ jobs:
           fetch-depth: 1
 
       # Installs dependencies, generates Prisma client, runs migrations, and starts dev server - by Narayan
+      - name: Configure Git
+        run: |
+          git config --global user.email "claude-bot@anthropic.com"
+          git config --global user.name "Claude"
+
       - name: Project Setup
         run: |
-          npm run setup
+          npm install
+          npx prisma generate
+          npx prisma migrate deploy
           npm run dev:daemon
 
       - name: Run Claude Code
@@ -64,7 +71,7 @@ jobs:
                   }
                 }
               }
-          # Allow git (branch/commit/push), npm, sqlite3, and playwright browser tools - by Narayan
-          allowed_tools: "Bash(git:*),Bash(npm:*),Bash(sqlite3:*),mcp__playwright__browser_snapshot,mcp__playwright__browser_click,..."
+          # Allow git, npm, sqlite3, and all playwright browser tools - by Narayan
+          allowed_tools: "Bash(git:*),Bash(npm:*),Bash(sqlite3:*),mcp__playwright__browser_snapshot,mcp__playwright__browser_click,mcp__playwright__browser_navigate,mcp__playwright__browser_take_screenshot,mcp__playwright__browser_type,mcp__playwright__browser_fill_form,mcp__playwright__browser_evaluate,mcp__playwright__browser_wait_for,mcp__playwright__browser_console_messages,mcp__playwright__browser_network_requests,mcp__playwright__browser_tabs,mcp__playwright__browser_close,mcp__playwright__browser_resize,mcp__playwright__browser_hover,mcp__playwright__browser_drag,mcp__playwright__browser_press_key,mcp__playwright__browser_select_option,mcp__playwright__browser_handle_dialog,mcp__playwright__browser_file_upload,mcp__playwright__browser_navigate_back,mcp__playwright__browser_run_code"
           additional_permissions: |
             actions: read
